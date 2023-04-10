@@ -1,0 +1,801 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: 'inter', sans;
+
+    text-decoration: none;
+}
+
+:root {
+    font-size: 62.5%; /* 1rem = 10px */
+
+    --cor-primaria: #4cbc0d;
+    --cor-secundaria: #28590b;
+    --cor-terceira: #bf0a0a;
+    --cor-header: #00995B;
+    --cor-laranja: #FF7500;
+
+    --cor-texto: #FFFFFF;
+}
+
+html {
+    height: 100%;
+
+    scroll-behavior: smooth;
+
+   background-color: whitesmoke;
+
+}
+
+body {
+    overflow-x: hidden;
+}
+
+#fundo {
+    width: fit-content;
+    margin: auto;
+
+}
+
+
+
+#cabecalho {
+    display: flex;
+    align-items: center;
+
+    padding: 1% 0% 0.5% 7%;
+
+    width: 100%;
+    z-index: 2;
+
+    background-color: var(--cor-header);
+}
+
+#cabecalho button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#carrossel  {
+    background: whitesmoke;   
+    padding: 0;
+}
+
+header div {
+    padding-left: 2rem;
+    display: flex; 
+    gap: 3rem; 
+}
+
+#menuImg {
+    width: 100%;
+}
+
+#loginImg {
+    width: 100%;
+    background-color: whitesmoke;
+    border-radius: 3rem;
+}
+
+#loginImg:hover {
+    background-color: var(--cor-primaria);
+    border-radius: 30px;
+    transition: 0.5s;
+    
+}
+
+#pesquisa-btn {
+    position: relative;
+    right: 85%;
+}
+
+#logoImg {
+    width: 6rem;
+    border-radius: 3rem;
+}
+
+.logo {
+    margin-left: 37%;
+}
+
+.inputAndButton {
+    margin-left: 27%;
+}
+
+#pesquisa::placeholder {
+    color: black;
+}
+
+#pesquisa {
+
+
+    width: 90% ;
+    height: 3.9rem;
+
+    background-color: rgba(40, 89, 11, 0.315) ;
+    opacity: 70%;
+    border-radius: .5rem;
+    border: none;
+
+    
+
+    padding-left: 17%;
+    font-size: 2rem;
+    color: var(--cor-texto);
+    font-weight: 700;
+}
+
+/*===== Menu sidebar ========*/
+
+nav .sidebar {
+    position: absolute;
+    width: 30rem;
+    left: -30rem;
+    height: 100vh;
+    background: rgb(0, 0, 0);
+    transition: all .5s ease;
+    z-index: 1;
+    visibility: hidden;
+}
+
+nav .sidebar aside {
+
+    font-size: 2.8rem;
+    color: #cebd92;
+    line-height: 7rem;
+    text-align: center;
+    user-select: none;
+}
+
+.aMenu{
+    display: flex;
+    align-items: center;
+    height: 6.5rem;
+    width: 100%;
+    color: var(--cor-laranja);
+    line-height: 6.5rem;
+    transition: all .3s ease;
+    border-bottom: .1rem solid ;
+    border-top: .1rem solid rgba(255, 255, 255, .1);
+    border-left: .5rem solid transparent;
+}
+
+.aMenu:active, .aMenu:hover {
+    border-left: .5rem solid var(--cor-primaria);
+    color: #daf82f;
+}
+
+nav .sidebar a i {
+    font-size: 3rem;
+    margin-left: 3rem;
+}
+
+nav .sidebar a span {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    margin-left: 2rem;
+    
+}
+
+nav #check {
+    display: none;
+
+}
+
+
+nav label #btn,label #cancel {
+    position: absolute;
+    cursor: pointer;
+    color: var(--cor-laranja);
+    border-radius: .5rem;
+    margin: 2rem 3rem;
+    font-size: 2.8rem;
+    height: 5rem;
+    width: 5rem;
+    transition: all .5s ease;
+
+    border: .1rem solid  ;
+    background: #000;
+    text-align: center;
+    line-height: 5rem;
+
+    max-width: 100%;
+}
+
+nav label #cancel{
+    opacity: 0;
+    visibility: hidden;
+}
+
+nav #check:checked ~ .sidebar{
+    left: 0;
+    visibility: visible;
+    transition: all .5s ease;
+
+}
+
+nav #check:checked ~ label #cancel{
+    margin-left: 30.5rem;
+    opacity: 1;
+    visibility: visible;
+   
+}
+
+/* ========== sidebar mobile ========*/
+
+@media(max-width: 800px){
+    nav .sidebar{
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    height: auto;
+    width: 6rem;
+    left: 0;
+    top: 5rem;
+    margin: 5rem 0;
+    }
+    
+    nav label #btn,label #cancel{
+        position: fixed;
+        top: -1rem;
+        z-index: 2;
+    }
+        
+    nav #btn {
+        position: fixed;
+        left: -2.5rem;
+    }
+
+    #cancel {
+        position: fixed;
+    }
+
+    nav #check:checked ~ label #cancel{
+        margin-top: 2rem;
+        margin-left: 0.5rem;
+    }
+
+    nav #check:checked ~ label #btn {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    nav #check:checked ~ .sidebar {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav aside{
+        display: none;
+    }
+
+    nav span {
+        display: none;
+        position: absolute;
+        margin-left: 2.3rem;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    nav .sidebar a{
+        height: 6rem;
+    }
+
+    nav .sidebar a i {
+        margin-left: 1px;
+        padding-left: 1rem;
+    }
+
+    nav a:hover {
+        width: 20rem;
+        background: inherit;
+        border-bottom-right-radius: 30px;
+    }
+
+    nav .sidebar a:hover span {
+        opacity: 1;
+        visibility: visible;
+        margin-left: 5rem;
+    }
+
+}
+/* SEU CODIGO AQUI */
+
+main {
+    background-image: url(../assets/back-localizacao.jpg);
+    background-size: cover;
+}
+
+.title{
+    font-size: 4.5rem;
+    text-align: center;
+    color: var(--cor-laranja);
+
+    padding-block: 5rem;
+} 
+
+#span{
+    color: var(--cor-header);
+}
+
+#app {
+   display: flex;
+   font-size: 3rem;
+   color: var(--cor-laranja);
+
+   margin-left: 12rem;
+   justify-content: space-between;
+}
+
+#app ul li {
+    font-weight: 700;
+    margin-bottom: .5rem;
+    color: var(--cor-laranja);
+}
+
+#app button {
+    border: none;
+    padding: 2rem;
+    color: white;
+    background: #262626;
+    border-radius: 1rem;
+
+    margin-block: 1.5rem;
+    font-size: 2rem;
+
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+#app-img {
+    margin-right: 10rem;
+    height: 55rem;
+}
+
+#logoImg {
+    width: 6rem;
+    margin: 0;
+}
+
+#app h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: .5rem;
+}
+
+#app p {
+    font-size: 1.3rem;
+}
+
+#delivery {
+    display: flex;
+    gap: 4rem;
+}
+
+#delivery img {
+    width: 8rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    
+}
+
+#imagens {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-block: 5rem;
+}
+
+#imagens img {
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.7);
+
+}
+
+hr {
+    margin-inline: 10rem;
+}
+
+#title-loca {
+    color: var(--cor-laranja);
+    text-transform: uppercase;
+    font-size: 4rem;
+    color: #262626;
+}
+
+section ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    font-size: 2rem;
+    color: #fff;
+    gap: 5rem;
+    font-weight: 700;
+
+}
+
+section div {
+    margin-inline: 5rem;
+    display: flex;
+}
+
+section ul li {
+    padding: 3.5rem;
+    border: 1px solid #fff172;
+    background: var(--cor-laranja);
+    opacity: 90%;
+
+    border-radius: .5rem;
+    width: 45rem;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0,4);
+
+}
+
+section a {
+    padding: 1rem;
+    background-color: var(--cor-header);
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+
+    margin-left: 12rem;
+    font-weight: 700;
+    color: #fff
+
+}
+
+section ul li h3 {
+    margin-bottom: .5rem;
+}
+
+section ul li p {
+    margin-bottom: 2rem;
+}
+
+#restaurante {
+    display: flex;
+    flex-direction: column;
+
+    width: 75rem;
+}
+
+#restaurante img {
+    margin-bottom: 4rem;
+    height: 42.5rem;
+}
+
+#restaurante h3 {
+    display: none;
+}
+
+/*============= FOOTER =============*/
+
+footer {
+    background-color: var(--cor-header);
+}
+
+#infoFooter {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+#lado-esquerdo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    gap: 2rem;
+
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+    width: 50%;
+}
+
+#lado-direito {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding-top: 5rem;
+}
+
+#logoAndName img{
+    width: 6rem;
+    margin: 0;
+    border-radius: 3rem;
+}
+
+#info-restaurante {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#info-restaurante div {
+    display: flex;
+    align-items: center;
+    color: var(--cor-texto);
+    gap: 2rem ;
+    
+}
+
+#info-restaurante p {
+    padding-right: 25rem;
+}
+
+
+#info-restaurante h3 {
+    font-size: 2rem;
+}
+
+.footer-info {
+    font-size: 1.8rem;
+    color: var(--cor-texto);
+}
+
+#atendimento {
+    display: flex;
+    gap: 5%;
+}
+
+#navegacao, #redes-sociais {
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+}
+
+#navegacao ul li a, #redes-sociais ul li a{
+    color: var(--cor-texto);
+}
+
+#navegacao ul, #redes-sociais ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+}
+
+#redes-sociais {
+    padding-right: 25rem;
+}
+
+#redes-sociais ul {
+    display: flex;
+    justify-content: center;
+}
+
+#redes-sociais ul li a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+hr {
+    margin-block: 2rem;
+}
+
+#copyright {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    padding-inline: 8rem;
+    padding-block: 2rem;
+}
+
+#span-copy {
+    margin-inline: 3rem;
+}
+
+/* RESPONSIVO */
+
+@media only screen and (max-width: 480px){
+    
+    /* CSS RESET */
+    .inputAndButton, #login-btn, #logoAndName img, #navegacao, .textLink, #copyright, #imagens  {
+       display: none;
+   }
+
+   #redes-sociais {
+       padding: 0;
+   }
+
+   #info-restaurante p {
+       padding-right: 0;
+   }
+
+
+   /* ----------------- */
+
+   body {
+       width: 100%;
+   }
+   #fundo {
+       width: 100%;
+   }
+
+   #cabecalho {
+       position: fixed;
+       width: 100%;
+       justify-content: center;
+       padding: 0;
+       height: 6.7rem;
+       margin: 0;
+       z-index: 1;
+   }
+   
+   .logo {
+       height: 60px;
+       margin: auto;
+       padding: 0;
+       margin: 0;
+   }
+
+   #logoImg {
+       height: 100%;
+       width: 100%;
+   }
+
+   main {
+    padding-top: 6.7rem;
+   }
+
+   #app-img {
+    width: 50%;
+    height: 50%;
+    margin: 0;
+   }
+
+   .title {
+    font-size: 2rem;
+   }
+
+   #app {
+    width: 90%;
+    margin-left: 0;
+    margin: auto;
+   }
+
+   main ul li {
+    font-size: 1.5rem;
+   }
+
+   #app button {
+    font-size: 1rem;
+    padding: 1.5rem;
+   }
+
+   #app h3 {
+    font-size: 1.5rem;
+   }
+
+   #app p {
+    font-size: 1rem;
+   }
+
+   #delivery img {
+    width: 6rem;
+   }
+
+   #title-loca {
+    font-size: 2rem;
+    padding-block: 3rem;
+   }
+
+   section div {
+       margin: 0;
+       display: block;
+    }
+    
+    section ul {
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: auto;
+        gap: 1rem;
+        row-gap: 2rem;
+   }
+
+   section ul li {
+    padding: 1rem;
+    width: auto;
+   }
+
+   section ul li h3 {
+    font-size: 1.5rem;
+   }
+
+   section ul li p {
+    font-size: 1.3rem;
+   }
+
+   section a {
+    width: 100%;
+    font-size: 1rem;
+    margin-left: 10%;
+    text-align: center;
+   }
+
+   #restaurante {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-block: 3rem;
+   }
+
+   #restaurante img {
+    width: 90%;
+    margin: auto;
+    height: 50%;
+
+   }
+
+   #restaurante h3 {
+    font-family: 'dancing script';
+    font-size: 2.5rem;
+    text-align: center;
+    display: initial;
+   }
+
+
+
+
+   /* FOOTER */
+
+   
+
+
+   #infoFooter {
+    display: block;
+    }
+
+    #lado-esquerdo {
+        width: 95%;
+        margin: auto;
+        padding: 1rem;
+        gap: .8rem;
+    }
+
+    #info-restaurante {
+        width: 100%;
+        gap: .5rem;
+    }
+
+    #info-restaurante #logoAndName {
+        display: initial;
+    }
+
+    .footer-info {
+        font-size: 1.3rem;
+    }
+    #logoAndName h3 {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    #lado-direito {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    #redes-sociais {
+        display: initial;
+        width: 85%;
+        margin: auto;
+    }
+
+    #redes-sociais h4 {
+        text-align: center;
+        padding: 0.3rem;
+    }
+
+    #redes-sociais ul {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 1rem;
+    }
+}

@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'inter';
+}
+
+main{
+    margin: auto;
+    background-color: #00995B;
+    opacity: 0.9;
+    width: 30rem;
+    border-radius: 2rem;
+    display: block;
+    height: 550px;
+    margin-top: 45px;
+}
+
+#fundo{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter';
+    background-image: url(../assets/imagem\ fundo\ registre-se.jpg);
+}
+#registro{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: 1px;
+}
+
+#login{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    
+}
+
+#imagem{
+    width: 65px;
+    border-radius: 60px;
+    margin: 20px 0% 20px 0;
+    margin-left: 43%;
+}
+
+#forms{
+    text-align: center;
+    display: flex;
+    margin-inline: 30px;
+    gap: 10px;
+}
+
+#email{
+    text-align: center; 
+    width: auto;
+    margin-inline: 30px;
+}
+
+.selecionar{
+    display: flex;
+    color: rgb(0, 0, 0);
+    align-items: center;   
+    gap: 2.5px; 
+}
+
+input{
+    padding: 10px 0;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    padding-left: 10px;
+    margin-block: 12.5px;
+}
+
+#checkbox{
+width: 15px;
+margin-left: 30px ;
+
+border: none;
+}
+
+
+.senha{
+    margin-bottom: 10px;
+    display: flex;
+    margin-inline: 30px;
+    gap: 10px;
+}
+
+button{
+    border-radius: 10px;
+    padding: 15px 100px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: white;
+    background-color:  #FF7500;
+    margin-left: 22%;
+}
+
+button:hover{
+    color: #223d2d;
+    background-color: white;
+    transition: 0.5s ease;
+}
+
+@media screen and (max-width: 480px){
+
+main{
+    width: 90%;
+    margin-bottom: 3rem;
+    height: auto;
+}
+
+#imagem{
+    margin-top: 0;
+    padding: 2rem;
+}
+
+#divImg {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+main a{
+    height: 100%;
+}
+
+#imagem{
+    width: 6rem;
+    height: 6rem;
+    padding: 0;
+    margin: auto;
+}
+
+    #registro {
+        font-size: 1.8rem;
+        padding-top: 1rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+        padding-block: .5rem;
+    }
+
+    h2 a {
+        margin: 0;
+    }
+
+    #forms {
+        display: block;
+    }
+
+    input {
+        margin-block: .5rem;
+    }
+
+    #checkbox {
+        margin-left: .75rem;
+    }
+
+    #botao {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button {
+        margin: 0;
+        padding: 0;
+        padding-block: 0.938rem;
+        width: 70%;
+        margin-bottom: 2rem;
+    }
+
+}
